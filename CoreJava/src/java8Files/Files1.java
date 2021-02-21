@@ -27,7 +27,7 @@ public class Files1 {
 			    Paths.get("F:\\Visual studio IDE"), 
 			    depth, 
 			    (path, attr) -> {
-			      return attr.isRegularFile() && path.toString().endsWith(".bin");  
+			      return attr.isRegularFile() && path.toString().endsWith(".dll");  
 			    })) {
 			  paths1.forEach(System.out::println);
 			}
