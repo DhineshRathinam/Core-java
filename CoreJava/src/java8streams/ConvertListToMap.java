@@ -4,13 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.Set;
-import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
@@ -145,6 +141,12 @@ public class ConvertListToMap {
 
 		System.out.println(mapLambda1);
 
+		// Retrieving student name with their address
+
+		Map<String, Object> mapp = getStudents().stream().filter(p -> p.getStudentName().startsWith("aaa")).collect(
+				Collectors.toMap(p -> p.getStudentName(), p -> p.getAddresses(), (oldValue, newValue) -> oldValue));
+		System.out.println("Retrieving student name with their address - filter: " + mapp);
+		
 		// Using flatmap
 		List<String> streetList = getStudents().stream().flatMap(p -> p.getAddresses().stream()).map(p -> p.getStreet())
 				.collect(Collectors.toList());
@@ -161,9 +163,9 @@ public class ConvertListToMap {
 					}
 				});
 		System.out.println(a);
-		
-		//reduce with different parameter
-		
+
+		// reduce with different parameter
+
 		/*
 		 * Integer a1 = getStudents().stream().filter(p ->
 		 * p.getDepartment().equalsIgnoreCase("Electronics")) .reduce(5, new
@@ -172,7 +174,7 @@ public class ConvertListToMap {
 		 * @Override public Student apply(Student t, Student u) { t.getAge()+u.getAge();
 		 * } }); System.out.println(a);
 		 */
-		
+
 		// min()
 
 		/*

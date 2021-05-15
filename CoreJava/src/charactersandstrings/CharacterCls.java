@@ -24,15 +24,22 @@ public class CharacterCls {
 		System.out.println(s3.isEmpty());
 
 		// replace and replaceall()
+		//replace() will replace all character that matches first parameter given in a string 
+		//whereas replaceAll() we can provide regular expression like \\s in the first parameter
+		//as replacement thing it will not work in replace()
 
 		String s4 = s3.replace("a", "Z");
-		System.out.println("replace(): " + s3);
+		System.out.println("replace(): " + s4);
 
 		String s5 = s3.replaceAll("\\s", "good");
 		System.out.println("replaceAll(): " + s5);
 		Employee employee = new Employee("12345");
 		System.out.println(employee.getPancardNumber());
 		//employee.pancardNumber = "7838642";
+		
+		String str = "This is index of example";  
+        int index = str.lastIndexOf('s',7);  
+        System.out.println("Last index of with range:"+index);   
 	}
 
 }

@@ -124,7 +124,7 @@ public class ArrayLists {
 		books.add(b2);
 		books.add(b3);
 
-		System.out.println(books);
+		System.out.println("Initial: "+books);
 		books.add(1, new Book(104, "Operating System1", "Galvin1", "Wiley1", 9));
 
 		System.out.println("add at index pos: " + books);
@@ -146,7 +146,7 @@ public class ArrayLists {
 		
 		System.out.println("AfterSorting: "+books);
 		
-		//Contains
+		//Contains - Internally checks equals method
 		boolean isContains = books.contains(new Book(103, "Operating System", "Galvin", "Wiley", 69));
 		System.out.println("Contains() : "+isContains);
 		

@@ -24,7 +24,7 @@ public class Files1 {
 			
 			int depth = Integer.MAX_VALUE;
 			try (Stream<Path> paths1 = Files.find(
-			    Paths.get("F:\\Visual studio IDE"), 
+			    Paths.get("F:\\VSCode-win32-x64-1.53.2"), 
 			    depth, 
 			    (path, attr) -> {
 			      return attr.isRegularFile() && path.toString().endsWith(".dll");  

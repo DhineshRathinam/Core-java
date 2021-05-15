@@ -35,13 +35,7 @@ public class ConcurrentHashMaps {
 		conMap.put(6, "Six1");
 		System.out.println(conMap);
 		Map<Integer, String> map1 = conMap.entrySet().stream().filter(p -> p.getKey() >= 5)
-				.collect(Collectors.toConcurrentMap(p -> p.getKey(), new Function<Entry<Integer, String>, String>() {
-
-					@Override
-					public String apply(Entry<Integer, String> t) {
-						return t.getValue().toUpperCase();
-					}
-				}, (a, b) -> b));
+				.collect(Collectors.toConcurrentMap(p -> p.getKey(), p->p.getValue().toUpperCase(), (a, b) -> b));
 		System.out.println(map1);
 	}
 

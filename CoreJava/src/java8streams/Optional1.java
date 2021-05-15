@@ -2,8 +2,9 @@ package java8streams;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.BinaryOperator;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Optional1 {
 
@@ -28,7 +29,27 @@ public class Optional1 {
 					.map(Student::getAge).collect(Collectors.toList());
 			System.out.println("Res: " + age1);
 		}
+		
+		listOfStudents.ifPresent(new Consumer<List<Student>>() {
 
+			@Override
+			public void accept(List<Student> t) {
+				System.out.println(sumAge(t));
+			}
+
+		});
+		
+	}
+	
+	public static int sumAge(List<Student> student) {
+		return student.stream().map(p->p.getAge()).reduce(0, new BinaryOperator<Integer>() {
+
+			@Override
+			public Integer apply(Integer t, Integer u) {
+				return t+u;
+			}
+		});
+		
 	}
 
 }

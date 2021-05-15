@@ -169,14 +169,14 @@ public class Maps {
 			}
 		});
 
-		System.out.println(map);
+		System.out.println("After computeIfAbsent: " + map);
 
 		map.computeIfPresent(5, (k, v) -> {
 			v.setName(v.getName().toUpperCase());
 			return v;
 		});
 
-		System.out.println(map);
+		System.out.println("After computeIfPresent: " + map);
 		
 		//get and get default
 		System.out.println(map.get(1));

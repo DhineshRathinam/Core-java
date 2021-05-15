@@ -10,13 +10,16 @@ public class Sets {
 		set.add(66);
 		set.add(12);
 		set.add(15);
+		
+		System.out.println(set.headSet(15, true));
+		
 		System.out.println(set.first());
 
 		// retrieves and removes highest
 		System.out.println(set.pollLast());
 
 		System.out.println(set.last());
-
+		
 		// Setting comparator sorting for an object for tree set
 		Set<Book> set1 = new TreeSet<Book>((o1, o2) -> o1.getAuthor().compareTo(o2.getAuthor()));
 
