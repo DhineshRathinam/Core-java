@@ -17,6 +17,7 @@ public class FilenotFound_Demo {
 			e.printStackTrace();
 		}
 		check();
+		System.out.println("Printing: ");
 	}
 
 	private static int check() throws NullPointerException {

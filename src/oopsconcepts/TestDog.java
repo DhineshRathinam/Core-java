@@ -1,13 +1,21 @@
 package oopsconcepts;
 
 class Animal {
+	public int a = 9;
+	public static int b = 7;
+	
 	   public void move() {
-	      System.out.println("Animals can move");
+	      System.out.println("Animals can move: "+a);
+	      System.out.println("Animals can move static: "+b);
 	   }
 	   
 	   public void move1() {
 		      System.out.println("Animals can move1");
 		   }
+	   public static void show() {
+		   System.out.println(new Animal().a);
+		   System.out.println(b);
+	   }
 	}
 
 	class Dog extends Animal {
@@ -28,5 +36,6 @@ class Animal {
 
 	      a.move();   // runs the method in Animal class
 	      b.move();   // runs the method in Dog class
+	      Animal.show();
 	   }
 	}

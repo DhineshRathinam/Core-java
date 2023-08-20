@@ -43,8 +43,13 @@ public class ClassCastException {
 		// ParentTest pt1 = new ParentTest("Adithya");
 		// pt1 = ct1;
 		ct1.display();
-
-		ParentTest pt2 = new ParentTest("Sai");
+		
+		ChildTest ct3 = new ChildTest("Sai");
+		ParentTest pt3 = (ParentTest) ct3;
+		
+		pt3.display();
+		
+		ParentTest pt2 = new ParentTest("Sai"); 
 		ChildTest ct2 = (ChildTest) pt2;
 	}
 }

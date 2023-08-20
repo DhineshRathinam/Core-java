@@ -128,6 +128,15 @@ public class ConvertListToMap {
 		Map<String, Integer> mapLambda = getStudents().stream().filter(p -> p.getAge() > 20).collect(Collectors
 				.toMap(t -> t.getStudentName(), t -> t.getAge(), (oldValue, newValue) -> oldValue, HashMap::new));
 
+		/*
+		 * Map<String, List<Address>> studentWithAddress = getStudents().stream()
+		 * .filter(t -> t.getDepartment().equalsIgnoreCase("Electronics"))
+		 * .collect(Collectors.toMap(p -> p.getStudentName(), p -> p.getAddresses(), (t,
+		 * u) -> t, () -> new HashMap<String, List<Address>>()));
+		 * 
+		 * System.out.println("studentWithAddress: " + studentWithAddress);
+		 */
+
 		// Retrieving the student and their city
 
 		Map<Object, Object> mapLambda1 = getStudents().stream().filter(p -> p.getAge() > 19)
@@ -137,7 +146,7 @@ public class ConvertListToMap {
 						cities.add(address.getCity());
 					}
 					return cities;
-				}, (oldValue, newValue) -> oldValue));
+				}, (oldValue, newValue) -> newValue));
 
 		System.out.println(mapLambda1);
 

@@ -44,7 +44,7 @@ class Post {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + id;
-		result = prime * result + ((info == null) ? 0 : info.hashCode());
+		//result = prime * result + ((info == null) ? 0 : info.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
@@ -60,11 +60,10 @@ class Post {
 		Post other = (Post) obj;
 		if (id != other.id)
 			return false;
-		if (info == null) {
-			if (other.info != null)
-				return false;
-		} else if (!info.equals(other.info))
-			return false;
+		/*
+		 * if (info == null) { if (other.info != null) return false; } else if
+		 * (!info.equals(other.info)) return false;
+		 */
 		if (name == null) {
 			if (other.name != null)
 				return false;
@@ -117,7 +116,7 @@ public class Sets {
 		
 		Set<Post> hset1 = new HashSet<Post>();
 		hset1.add(new Post(1, "post1", "info2"));
-		hset1.add(new Post(1, "post1", "info1"));
+		hset1.add(new Post(1, "post1", "info3"));
 		
 		System.out.println("Set val: "+hset);
 		System.out.println(hset.equals(hset1));

@@ -122,7 +122,7 @@ public class Maps {
 		map.put(2, b2);
 		map.put(3, b3);
 
-		System.out.println(map);
+		System.out.println("Initial: "+map);
 
 		// Replace()
 
@@ -140,13 +140,13 @@ public class Maps {
 				return u;
 			}
 		});
-		System.out.println(map);
+		System.out.println("After replaceAll(): "+map);
 
 		// Contains key
 
 		System.out.println("Check for contains key: " + map.containsKey(20));
 		System.out.println("Check for contains val: "
-				+ map.containsValue(new Book(101, "Let us C", "Yashwant Kanetkar1", "BPB", 13)));
+				+ map.containsValue(new Book(101, "Let us C", "Yashwant Kanetkar", "BPB", 13)));
 
 		// Compute
 

@@ -147,7 +147,7 @@ public class ArrayLists {
 		System.out.println("AfterSorting: "+books);
 		
 		//Contains - Internally checks equals method
-		boolean isContains = books.contains(new Book(103, "Operating System", "Galvin", "Wiley", 69));
+		boolean isContains = books.contains(new Book(103, "Operating System", "Galvin", "Wiley", 6));
 		System.out.println("Contains() : "+isContains);
 		
 		//Remove - index

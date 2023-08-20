@@ -41,7 +41,7 @@ public class GroupingBy {
 
 		// Grouping after doing mapping
 
-		Map<Object, List<Object>> map4 = ConvertListToMap.getStudents().stream().collect(Collectors
+		Map<String, List<Object>> map4 = ConvertListToMap.getStudents().stream().collect(Collectors
 				.groupingBy(p -> p.getDepartment(), Collectors.mapping(p -> p.getStudentName(), Collectors.toList())));
 		System.out.println("Grouping after doing mapping: " + map4);
 
