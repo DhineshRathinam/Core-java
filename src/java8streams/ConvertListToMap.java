@@ -223,6 +223,7 @@ public class ConvertListToMap {
 	}
 
 	public static List<Student> getStudents() {
+		
 		return Arrays.asList(
 				new Student("aaa", 20, "Electronics",
 						Arrays.asList(new Address("address1", "city1", 111), new Address("address11", "city11", 1111))),
